@@ -25,7 +25,7 @@ map.drawmeridians(np.arange(0, 360, 30), labels=[True, True, True, True], linewi
 map.drawparallels(np.arange(-90, 90, 30), labels=[True, True, True, True], linewidth=0.1)
 
 
-# OBIS: http://www.iobis.org y leerla en un DataFrame de pandas
+# OBIS: http://www.iobis.org
 #Importing Cystoseira's data
 specieC = pd. read_table('proccessed_Cystoseira.txt' , sep=';' ,
                        header=0, na_values=' ')
@@ -41,10 +41,18 @@ print(specieS)
 lonS, latS = map(list(specieS['longitude']), list(specieS['latitude']))
 
 
-# MODIFICABLE
-# Opciones de visualizacion de la especie
-# Muchas mas en: http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot
-map.plot(lon, lat, 'bo', markersize=7, markeredgecolor='none')
+#Putting all together in a single map
+map.drawcoastlines(linewidth=0.5)
+map.drawcountries(linewidth=0.5)
+map.fillcontinents(color='0.9', alpha=0.5)
+map.drawmapboundary()
+map.drawmeridians(np.arange(0, 360, 30), labels=[True, True, False, True], linewidth=0.1)
+map.drawparallels(np.arange(-90, 90, 30), labels=[True, False, True, True], linewidth=0.1)
+map.plot(lonS, latS, 'go', markersize=3, markeredgecolor='none', label='Saccorhiza polyschides')
+map.plot(lonC, latC, 'c^', markersize=2.5, markeredgecolor='none', label='Cystoseira tamariscifolia')
+plt.title('Distribution map\nMarine algae')
+plt.legend(loc='lower right', fontsize='small')
+plt.show()
 
 # INSTRUCCION
 # Debeis guardar la figura a un archivo pdf
