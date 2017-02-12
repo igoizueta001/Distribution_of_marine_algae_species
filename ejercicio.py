@@ -25,14 +25,21 @@ map.drawmeridians(np.arange(0, 360, 30), labels=[True, True, True, True], linewi
 map.drawparallels(np.arange(-90, 90, 30), labels=[True, True, True, True], linewidth=0.1)
 
 
-# INSTRUCCION
-# Debeis descargaros un fichero csv con un conjunto de registros (records) de una especie
-# desde la pagina del OBIS: http://www.iobis.org y leerla en un DataFrame de pandas
-# Ese DataFrame se debe llamar specie
-specie =
+# OBIS: http://www.iobis.org y leerla en un DataFrame de pandas
+#Importing Cystoseira's data
+specieC = pd. read_table('proccessed_Cystoseira.txt' , sep=';' ,
+                       header=0, na_values=' ')
+print(specieC)
+#Setting the coordenates of Cystoseira's distribution
+lonC, latC = map(list(specieC['longitude']), list(specieC['latitude']))
 
-# Datos de latitud y longitud de la especie
-lon, lat = map(list(specie['longitude']), list(specie['latitude']))
+#Importing Saccorhiza's data
+specieS = pd. read_table('proccessed_Saccorhiza.txt' , sep=';' ,
+                       header=0, na_values=' ')
+print(specieS)
+#Setting the coordenates of Saccorhiza's distribution
+lonS, latS = map(list(specieS['longitude']), list(specieS['latitude']))
+
 
 # MODIFICABLE
 # Opciones de visualizacion de la especie
