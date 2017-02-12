@@ -41,7 +41,8 @@ print(specieS)
 lonS, latS = map(list(specieS['longitude']), list(specieS['latitude']))
 
 
-#Putting all together in a single map
+#Putting all together in a single map and saving it to a pdf
+plt.figure()
 map.drawcoastlines(linewidth=0.5)
 map.drawcountries(linewidth=0.5)
 map.fillcontinents(color='0.9', alpha=0.5)
@@ -52,11 +53,4 @@ map.plot(lonS, latS, 'go', markersize=3, markeredgecolor='none', label='Saccorhi
 map.plot(lonC, latC, 'c^', markersize=2.5, markeredgecolor='none', label='Cystoseira tamariscifolia')
 plt.title('Distribution map\nMarine algae')
 plt.legend(loc='lower right', fontsize='small')
-plt.show()
-
-# INSTRUCCION
-# Debeis guardar la figura a un archivo pdf
-map.
-
-# Se muestra el mapa por pantalla
-plt.show()
+plt.savefig("distribution_map.pdf")
