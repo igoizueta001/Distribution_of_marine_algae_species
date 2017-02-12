@@ -5,10 +5,10 @@ Created on Sun Feb 12 09:47:35 2017
 @author: Ioritz Goizueta
 """
 #Brief explanation of the aim of this work:
-    #We have been asked to represent a distribution map of a marine living organism using this software.
+    #We have been asked to represent a distribution map of a marine living organism using Python.
     #I have chosen two algae species: Cystoseira tamariscifolia and Saccorhiza ployschides.
-    #The chosen species are seen to live together forming "asociations" along the North Atlantic Ocean and Mediterranean sea.
-    #Thus, based on the occurrence data of the distribution of each species, this work aims to put together data of both species and check wheter their distribution overlaps or not.
+    #The chosen species are seen to live together forming "asociations" along the North Atlantic Ocean and Mediterranean sea.(page 91: http://www.rac-spa.org/sites/default/files/doc_mkh/msdf/msdf_eng_cover.pdf)
+    #Thus, based on the occurrence data of the distribution of each species (http://www.iobis.org), this work aims to put together data of both species and check wheter their distribution overlaps or not.
     #This way, it will be seen in a simple way if one species need the other to appear in a place or they appear together due to the addequate environmental conditions of those habitats.
 
 #Importing packages
