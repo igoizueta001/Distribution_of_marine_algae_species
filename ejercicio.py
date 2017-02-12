@@ -1,24 +1,29 @@
-# INSTRUCCION
-# Es necesario instalar el paquete Basemap desde Anaconda Navigator
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Feb 12 09:47:35 2017
+
+@author: Ioritz Goizueta
+"""
+
+#Importing packages
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-# MODIFICABLE
-# Debeis ajustar las coordenadas del mapa a la localizacion de la especie
-# La ayuda esta en: http://matplotlib.org/basemap/api/basemap_api.html#module-mpl_toolkits.basemap
-map = Basemap(projection='mill', resolution='l', llcrnrlon=-25, llcrnrlat=20, urcrnrlon=40, urcrnrlat=60)
 
-# MODIFICABLE
-# Opciones del mapa
-# Muchas mas en: http://matplotlib.org/basemap/api/basemap_api.html#module-mpl_toolkits.basemap
+#Adjusting map coordenates based on the species occurrence points (Saccorhiza polyschides, Cystoseira tamariscifolia) ustar las coordenadas del mapa a la localizacion de la especie
+map = Basemap(projection='mill', resolution='l', llcrnrlon=-20, llcrnrlat=25, urcrnrlon=20, urcrnrlat=70)
+
+# Setting and modifyng the map
+# Much more at: http://matplotlib.org/basemap/api/basemap_api.html#module-mpl_toolkits.basemap
 map.drawcoastlines(linewidth=0.5)
 map.drawcountries(linewidth=0.5)
-map.fillcontinents(alpha=0.5)
+map.fillcontinents(color='0.9', alpha=0.5)
 map.drawmapboundary()
-map.drawmeridians(np.arange(0, 360, 30), labels=[False, False, False, True], linewidth=0.1)
-map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], linewidth=0.1)
+map.drawmeridians(np.arange(0, 360, 30), labels=[True, True, True, True], linewidth=0.1)
+map.drawparallels(np.arange(-90, 90, 30), labels=[True, True, True, True], linewidth=0.1)
+
 
 # INSTRUCCION
 # Debeis descargaros un fichero csv con un conjunto de registros (records) de una especie
