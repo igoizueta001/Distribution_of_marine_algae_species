@@ -4,6 +4,12 @@ Created on Sun Feb 12 09:47:35 2017
 
 @author: Ioritz Goizueta
 """
+#Brief explanation of the aim of this work:
+    #We have been asked to represent a distribution map of a marine living organism using this software.
+    #I have chosen two algae species: Cystoseira tamariscifolia and Saccorhiza ployschides.
+    #The chosen species are seen to live together forming "asociations" along the North Atlantic Ocean and Mediterranean sea.
+    #Thus, based on the occurrence data of the distribution of each species, this work aims to put together data of both species and check wheter their distribution overlaps or not.
+    #This way, it will be seen in a simple way if one species need the other to appear in a place or they appear together due to the addequate environmental conditions of those habitats.
 
 #Importing packages
 from mpl_toolkits.basemap import Basemap
